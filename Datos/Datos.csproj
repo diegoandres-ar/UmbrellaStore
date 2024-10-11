@@ -45,8 +45,10 @@
     <Compile Include="RepositorioBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositorioCategoriasProductos.cs" />
+    <Compile Include="RepositorioClientes.cs" />
     <Compile Include="RepositorioDetallesElectronicos.cs" />
     <Compile Include="RepositorioDetallesFactura.cs" />
+    <Compile Include="RepositorioFacturas.cs" />
     <Compile Include="RepositorioMarcas.cs" />
     <Compile Include="RepositorioMediosPago.cs" />
     <Compile Include="RepositorioProductos.cs" />

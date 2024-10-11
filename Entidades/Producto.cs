@@ -15,10 +15,11 @@ namespace Entidades
         public MarcaProducto MarcaProducto { get; set; }
         public CategoriaProducto CategoriaProducto { get; set; }
         public string Descripcion { get; set; }
+        public bool Estado { get; set; }
 
-        public Producto(string id, string nombre, double precio, 
-            int stock, MarcaProducto marcaProducto, CategoriaProducto categoriaProducto, 
-            string descripcion)
+        public Producto(string id, string nombre, double precio, int stock, 
+            MarcaProducto marcaProducto, CategoriaProducto categoriaProducto, 
+            string descripcion, bool estado)
         {
             Id = id;
             Nombre = nombre;
@@ -27,12 +28,13 @@ namespace Entidades
             MarcaProducto = marcaProducto;
             CategoriaProducto = categoriaProducto;
             Descripcion = descripcion;
+            Estado = estado;
         }
 
         public override string ToString()
         {
             return $"{Id};{Nombre};{Precio};{Stock};{MarcaProducto.Id};" +
-                $"{CategoriaProducto.Id};{Descripcion}";
+                $"{CategoriaProducto.Id};{Descripcion};{Estado}";
         }
 
     }

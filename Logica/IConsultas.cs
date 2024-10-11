@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Logica
 {
-    public class Class1
+    internal interface IConsultas<T>
     {
+        List<T> ObtenerTodo();
+        T ObtenerPorId(string id);
     }
 }

@@ -38,6 +38,23 @@ namespace Datos
 
         }
 
+        public DetalleFactura ObtenerPorId(string id)
+        {
+            List<DetalleFactura> detallesFactura = CargarDatos();
+            return detallesFactura.Find(d => d.Id == id);
+        }
+
+        public List<DetalleFactura> ObtenerItems(string linea)
+        {
+            string[] datos = linea.Split('-');
+            List<DetalleFactura> detallesFactura = new List<DetalleFactura>();
+            foreach (string item in datos)
+            {
+                detallesFactura.Add(Map(item));
+            }
+            return detallesFactura;
+        }
+
         public DetalleFactura Map(string linea)
         {
             string[] datos = linea.Split(';');

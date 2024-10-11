@@ -55,7 +55,8 @@ namespace Datos
             MarcaProducto marca = repositorioMarcas.ObtenerPorId(datos[4]);
             CategoriaProducto categoria = repositorioCategoriasProductos.ObtenerPorId(datos[5]);
             string descripcion = datos[6];
-            return new Producto(codigo, nombre, precio, cantidad, marca, categoria, descripcion);
+            bool estado = bool.Parse(datos[7]);
+            return new Producto(codigo, nombre, precio, cantidad, marca, categoria, descripcion, estado);
         }
 
     }

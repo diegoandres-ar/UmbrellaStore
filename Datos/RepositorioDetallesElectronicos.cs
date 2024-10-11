@@ -37,6 +37,12 @@ namespace Datos
             }
         }
 
+        public DetalleElectronico ObtenerPorId(string id)
+        {
+            List<DetalleElectronico> detallesElectronicos = CargarDatos();
+            return detallesElectronicos.Find(d => d.Id == id);
+        }
+
         public DetalleElectronico Map(string linea)
         {
             string[] datos = linea.Split(';');

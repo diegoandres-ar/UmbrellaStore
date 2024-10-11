@@ -12,6 +12,7 @@ namespace Entidades
         public Usuario Vendedor { get; set; }
         public Persona Cliente { get; set; }
         public DateTime Fecha { get; set; }
+        public DateTime Hora { get; set; }
         public List<DetalleFactura> Detalles { get; set; }
         public double TotalImpuesto { get; set; }
         public double TotalAbsoluto { get; set; }
@@ -31,10 +32,22 @@ namespace Entidades
             DetalleElectronico = detalleElectronico;
         }
 
+        public string RecorrerDetallesVenta()
+        {
+            string detalles = "";
+            foreach (DetalleFactura detalle in Detalles)
+            {
+                detalles += $"{detalle.Id}-";
+            }
+            return detalles;
+        }
+
         public override string ToString()
         {
             return $"{Id};{Vendedor.NumeroIdentificacion};{Cliente.NumeroIdentificacion};" +
-                $"{Fecha};{TotalImpuesto};{TotalAbsoluto};{DetalleElectronico.Id}";
+                $"{Fecha.ToString("dd-MM-yyyy")};{Hora.ToString("HH:mm:ss")};{RecorrerDetallesVenta()};" +
+                $"{TotalImpuesto};{TotalAbsoluto};{DetalleElectronico.Id}";
         }
+
     }
 }
