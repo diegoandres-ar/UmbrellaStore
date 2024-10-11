@@ -39,6 +39,12 @@ namespace Datos
             }
         }
 
+        public Usuario ObtenerPorId(string id)
+        {
+            List<Usuario> usuarios = CargarDatos();
+            return usuarios.Find(u => u.NumeroIdentificacion == id);
+        }
+
         public Usuario Map(string linea)
         {
             string[] datos = linea.Split(';');

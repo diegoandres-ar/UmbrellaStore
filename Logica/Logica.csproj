@@ -41,13 +41,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="IConsultas.cs" />
+    <Compile Include="ServiciosCategoriaProducto.cs" />
+    <Compile Include="Icrud.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiciosClientes.cs" />
+    <Compile Include="ServiciosDetallesElectronicos.cs" />
+    <Compile Include="ServiciosDetallesFactura.cs" />
+    <Compile Include="ServiciosFactura.cs" />
+    <Compile Include="ServiciosMarcaProducto.cs" />
+    <Compile Include="ServiciosMediosPago.cs" />
+    <Compile Include="ServiciosProductos.cs" />
+    <Compile Include="ServiciosRoles.cs" />
+    <Compile Include="ServiciosTiposDocumento.cs" />
+    <Compile Include="ServiciosUsuarios.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj">
       <Project>{e2a8b3a7-9807-47a6-95ec-c62d5f5d04ee}</Project>
       <Name>Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{6efbeaae-686f-40df-910d-6c384784efdf}</Project>
+      <Name>Entidades</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
