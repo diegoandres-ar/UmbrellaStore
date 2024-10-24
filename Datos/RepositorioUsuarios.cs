@@ -14,7 +14,7 @@ namespace Datos
         RepositorioRoles repositorioRoles;
         public RepositorioUsuarios(string rutaArchivo) : base(rutaArchivo)
         {
-            repositorioTiposDocumento = new RepositorioTiposDocumento(Configuracion.RUTA_TIPOS_IDENTIFICACIONES);
+            repositorioTiposDocumento = new RepositorioTiposDocumento(Configuracion.RUTA_TIPOS_DOCUMENTOS);
             repositorioRoles = new RepositorioRoles(Configuracion.RUTA_ROLES);
         }
 

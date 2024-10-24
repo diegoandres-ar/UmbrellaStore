@@ -52,6 +52,7 @@
     <Compile Include="ServiciosMarcaProducto.cs" />
     <Compile Include="ServiciosMediosPago.cs" />
     <Compile Include="ServiciosProductos.cs" />
+    <Compile Include="ServiciosProveedores.cs" />
     <Compile Include="ServiciosRoles.cs" />
     <Compile Include="ServiciosTiposDocumento.cs" />
     <Compile Include="ServiciosUsuarios.cs" />

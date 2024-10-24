@@ -15,7 +15,7 @@ namespace Logica
 
         public ServiciosTiposDocumento()
         {
-            repositorioTiposDocumento = new RepositorioTiposDocumento(Configuracion.RUTA_TIPOS_IDENTIFICACIONES);
+            repositorioTiposDocumento = new RepositorioTiposDocumento(Configuracion.RUTA_TIPOS_DOCUMENTOS);
         }
 
         public string Eliminar(string id)

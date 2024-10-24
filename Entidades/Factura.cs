@@ -32,6 +32,19 @@ namespace Entidades
             DetalleElectronico = detalleElectronico;
         }
 
+        public void CalcularTotal()
+        {
+            foreach (DetalleFactura detalle in Detalles)
+            {
+                TotalAbsoluto += detalle.SubTotal;
+            }
+        }
+
+        public void AplicarIVA()
+        {
+            TotalImpuesto = TotalAbsoluto * DetalleElectronico.IVA;
+        }
+
         public string RecorrerDetallesVenta()
         {
             string detalles = "";
@@ -48,6 +61,5 @@ namespace Entidades
                 $"{Fecha.ToString("dd-MM-yyyy")};{Hora.ToString("HH:mm:ss")};{RecorrerDetallesVenta()};" +
                 $"{TotalImpuesto};{TotalAbsoluto};{DetalleElectronico.Id}";
         }
-
     }
 }

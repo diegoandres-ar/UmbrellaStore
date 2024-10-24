@@ -9,9 +9,10 @@ namespace Datos
     public static class Configuracion
     {
         public const string RUTA_ROLES = "Roles.txt";
-        public const string RUTA_TIPOS_IDENTIFICACIONES = "TiposIdentificaciones.txt";
+        public const string RUTA_TIPOS_DOCUMENTOS = "TiposDocumentos.txt";
         public const string RUTA_CLIENTES = "Clientes.txt";
         public const string RUTA_USUARIOS = "Usuarios.txt";
+        public const string RUTA_PROVEEDORES = "Proveedores.txt";
         public const string RUTA_MEDIOS_PAGOS = "MediosPagos.txt";
         public const string RUTA_PRODUCTOS = "Productos.txt";
         public const string RUTA_MARCAS = "Marcas.txt";

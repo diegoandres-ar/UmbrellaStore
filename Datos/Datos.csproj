@@ -52,6 +52,7 @@
     <Compile Include="RepositorioMarcas.cs" />
     <Compile Include="RepositorioMediosPago.cs" />
     <Compile Include="RepositorioProductos.cs" />
+    <Compile Include="RepositorioProveedores.cs" />
     <Compile Include="RepositorioRoles.cs" />
     <Compile Include="RepositorioTiposDocumento.cs" />
     <Compile Include="RepositorioUsuarios.cs" />

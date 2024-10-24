@@ -29,12 +29,5 @@ namespace Entidades
             CorreoElectronico = correoElectronico;
             Telefono = telefono;
         }
-
-        public override string ToString()
-        {
-            return $"{NumeroIdentificacion};{TipoDocumento};{PrimerNombre};" +
-                $"{SegundoNombre};{PrimerApellido};{SegundoApellido};" +
-                $"{CorreoElectronico};{Telefono}";
-        }
     }
 }

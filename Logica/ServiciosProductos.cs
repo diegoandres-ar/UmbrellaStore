@@ -12,10 +12,13 @@ namespace Logica
     {
         private RepositorioProductos repositorioProductos;
         private List<Producto> listaProductos;
+        private RepositorioProveedores repositorioProveedores;
+        private List<Proveedor> proveedores;
 
         public ServiciosProductos()
         {
             repositorioProductos = new RepositorioProductos(Configuracion.RUTA_PRODUCTOS);
+            repositorioProveedores = new RepositorioProveedores(Configuracion.RUTA_PROVEEDORES);
         }
 
         public string Eliminar(string id)
@@ -43,5 +46,27 @@ namespace Logica
         {
             return repositorioProductos.CargarDatos();
         }
+
+        public List<Proveedor> ObtenerProveedoresProducto(Producto producto)
+        {
+            //List<Proveedor> proveedoresProducto = new List<Proveedor>();
+            //foreach (var proveedor in proveedores)
+            //{
+            //    foreach (var prod in proveedor.Productos)
+            //    {
+            //        if (prod.Id == producto.Id)
+            //        {
+            //            proveedoresProducto.Add(proveedor);
+            //            break;
+            //        }
+            //    }
+            //}
+            proveedores = repositorioProveedores.CargarDatos();
+            var proveedoresProducto = proveedores
+            .Where(proveedor => proveedor.Productos.Any(prod => prod.Id == producto.Id))
+                    .ToList();
+            return proveedoresProducto;
+        }
+
     }
 }
