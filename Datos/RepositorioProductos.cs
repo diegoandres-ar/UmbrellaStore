@@ -12,10 +12,12 @@ namespace Datos
     {
         RepositorioCategoriasProductos repositorioCategoriasProductos;
         RepositorioMarcas repositorioMarcas;
+        RepositorioProveedores repositorioProveedores;
         public RepositorioProductos(string rutaArchivo) : base(rutaArchivo)
         {
             repositorioCategoriasProductos = new RepositorioCategoriasProductos(Configuracion.RUTA_CATEGORIAS);
             repositorioMarcas = new RepositorioMarcas(Configuracion.RUTA_MARCAS);
+            repositorioProveedores = new RepositorioProveedores(Configuracion.RUTA_PROVEEDORES);
         }
 
         public override List<Producto> CargarDatos()
@@ -45,6 +47,11 @@ namespace Datos
             return productos.Find(c => c.Id == id);
         }
 
+        public List<Producto> ObtenerProductos(string linea)
+        {
+            return linea.Split('-').Select(id => ObtenerPorId(id)).ToList();
+        }
+
         public Producto Map(string linea)
         {
             string[] datos = linea.Split(';');
@@ -56,7 +63,10 @@ namespace Datos
             CategoriaProducto categoria = repositorioCategoriasProductos.ObtenerPorId(datos[5]);
             string descripcion = datos[6];
             bool estado = bool.Parse(datos[7]);
-            return new Producto(codigo, nombre, precio, cantidad, marca, categoria, descripcion, estado);
+            List<Proveedor> proveedores = repositorioProveedores.ObtenerProveedores(datos[8]);
+            Producto producto = new Producto(codigo, nombre, precio, cantidad, marca, categoria, 
+                descripcion, estado, proveedores);
+
         }
 
     }

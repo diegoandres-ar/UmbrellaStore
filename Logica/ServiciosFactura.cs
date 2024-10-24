@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Logica
 {
-    public class ServiciosFactura : Icrud<Factura>
+    public class ServiciosFactura : Iconsultas<Factura>
     {
         private RepositorioFacturas repositorioFacturas;
         private List<Factura> listaFacturas;
@@ -18,19 +18,9 @@ namespace Logica
             repositorioFacturas = new RepositorioFacturas(Configuracion.RUTA_FACTURAS);
         }
 
-        public string Eliminar(string id)
-        {
-            throw new NotImplementedException();
-        }
-
         public string Guardar(Factura entidad)
         {
             return repositorioFacturas.GuardarDatos(entidad);
-        }
-
-        public string Modificar(Factura entidad)
-        {
-            throw new NotImplementedException();
         }
 
         public Factura ObtenerPorId(string id)

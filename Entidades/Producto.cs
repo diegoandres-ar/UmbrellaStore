@@ -16,10 +16,11 @@ namespace Entidades
         public CategoriaProducto CategoriaProducto { get; set; }
         public string Descripcion { get; set; }
         public bool Estado { get; set; }
+        public List<Proveedor> Proveedores { get; set; }
 
         public Producto(string id, string nombre, double precio, int stock, 
             MarcaProducto marcaProducto, CategoriaProducto categoriaProducto, 
-            string descripcion, bool estado)
+            string descripcion, bool estado, List<Proveedor> proveedores)
         {
             Id = id;
             Nombre = nombre;
@@ -29,12 +30,23 @@ namespace Entidades
             CategoriaProducto = categoriaProducto;
             Descripcion = descripcion;
             Estado = estado;
+            Proveedores = proveedores;
+        }
+
+        public string RecorrerProveedores()
+        {
+            string proveedores = string.Empty;
+            foreach (var item in Proveedores)
+            {
+                proveedores += $"{item.NumeroIdentificacion}-";
+            }
+            return proveedores;
         }
 
         public override string ToString()
         {
             return $"{Id};{Nombre};{Precio};{Stock};{MarcaProducto.Id};" +
-                $"{CategoriaProducto.Id};{Descripcion};{Estado}";
+                $"{CategoriaProducto.Id};{Descripcion};{Estado};{RecorrerProveedores()}";
         }
 
     }

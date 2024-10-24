@@ -46,13 +46,17 @@ namespace Datos
 
         public List<DetalleFactura> ObtenerItems(string linea)
         {
-            string[] datos = linea.Split('-');
-            List<DetalleFactura> detallesFactura = new List<DetalleFactura>();
-            foreach (string item in datos)
-            {
-                detallesFactura.Add(Map(item));
-            }
-            return detallesFactura;
+            //string[] datos = linea.Split('-');
+            //List<DetalleFactura> detallesFactura = new List<DetalleFactura>();
+
+            //for (int i = 0; i < datos.Length; i++)
+            //{
+            //    DetalleFactura detalleFactura = ObtenerPorId(datos[i]);
+            //    detallesFactura.Add(detalleFactura);
+            //}
+
+            //return detallesFactura;
+            return linea.Split('-').Select(dato => ObtenerPorId(dato)).ToList();
         }
 
         public DetalleFactura Map(string linea)

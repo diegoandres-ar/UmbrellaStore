@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Logica
 {
-    public class ServiciosClientes : Icrud<Persona>
+    public class ServiciosClientes : Icrud<Cliente>
     {
         private RepositorioClientes repositorioClientes;
-        private List<Persona> listaClientes;
+        private List<Cliente> clientes;
 
         public ServiciosClientes()
         {
@@ -23,23 +23,23 @@ namespace Logica
             throw new NotImplementedException();
         }
 
-        public string Guardar(Persona entidad)
+        public string Guardar(Cliente entidad)
         {
             return repositorioClientes.GuardarDatos(entidad);
         }
 
-        public string Modificar(Persona entidad)
+        public string Modificar(Cliente entidad)
         {
             throw new NotImplementedException();
         }
 
-        public Persona ObtenerPorId(string id)
+        public Cliente ObtenerPorId(string id)
         {
-            listaClientes = repositorioClientes.CargarDatos();
-            return listaClientes.Find(c => c.NumeroIdentificacion == id);
+            clientes = repositorioClientes.CargarDatos();
+            return clientes.Find(c => c.NumeroIdentificacion == id);
         }
 
-        public List<Persona> ObtenerTodo()
+        public List<Cliente> ObtenerTodo()
         {
             return repositorioClientes.CargarDatos();
         }

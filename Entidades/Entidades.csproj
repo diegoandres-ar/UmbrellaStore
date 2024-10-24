@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoriaProducto.cs" />
+    <Compile Include="Cliente.cs" />
     <Compile Include="DetalleElectronico.cs" />
     <Compile Include="DetalleFactura.cs" />
     <Compile Include="Factura.cs" />
@@ -49,6 +50,7 @@
     <Compile Include="MedioPago.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Producto.cs" />
+    <Compile Include="Proveedor.cs" />
     <Compile Include="Rol.cs" />
     <Compile Include="TipoDocumento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
